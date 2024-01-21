@@ -1,64 +1,34 @@
+// Header.js
 import React from 'react';
+import Logo from './Logo';
 import './Header.css';
 
 function Header() {
     return (
         <header>
-            <nav>
-                <ul className="nav_links">
-                    <li className="dropdown">
-                        <a href="#">New Arrivals</a>
-                        <ul className="dropdown-menu">
-                            <li><a href="#">Men's Clothing</a></li>
-                            <li><a href="#">Women's Clothing</a></li>
-                            <li><a href="#">Children's Clothing</a></li>
-                            <li><a href="#">Home Products</a></li>
-                        </ul>
-                    </li>
-                    <li className="dropdown">
-                        <a href="#">Men's Clothing</a>
-                        <ul className="dropdown-menu">
-                            <li><a href="#">T-Shirts</a></li>
-                            <li><a href="#">Sweatshirts</a></li>
-                            <li><a href="#">Shirts</a></li>
-                            <li><a href="#">Suits</a></li>
-                            <li><a href="#">Men's Sale</a></li>
-                        </ul>
-                    </li>
-                    <li className="dropdown">
-                        <a href="#">Women's Clothing</a>
-                        <ul className="dropdown-menu">
-                            <li><a href="#">T-Shirts</a></li>
-                            <li><a href="#">Demin</a></li>
-                            <li><a href="#">Shorts</a></li>
-                            <li><a href="#">Dresses</a></li>
-                            <li><a href="#">Women's Sale</a></li>
-                        </ul>
-                    </li>
-                    <li className="dropdown">
-                        <a href="#">Children's Clothing</a>
-                        <ul className="dropdown-menu">
-                            <li><a href="#">T-Shirts</a></li>
-                            <li><a href="#">Shoes</a></li>
-                            <li><a href="#">Shirts</a></li>
-                            <li><a href="#">Hoodies</a></li>
-                            <li><a href="#">Children's Sale</a></li>
-                        </ul>
-                    </li>
-                    <li className="dropdown">
-                        <a href="#">Home Products</a>
-                        <ul className="dropdown-menu">
-                            <li><a href="#">Electricals</a></li>
-                            <li><a href="#">Kitchenware</a></li>
-                            <li><a href="#">Furniture</a></li>
-                            <li><a href="#">Bathroom</a></li>
-                            <li><a href="#">Home Sale</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </nav>
+            <div className="header-container">
+                <Logo />
+                <nav>
+                    <ul className="nav_links">
+                        {navItems.map((item) => (
+                            <li key={item.label} className="dropdown">
+                                <a href={item.link}>{item.label}</a>
+                                {item.submenu && (
+                                    <ul className="dropdown-menu">
+                                        {item.submenu.map((subItem) => (
+                                            <li key={subItem.label}>
+                                                <a href={subItem.link}>{subItem.label}</a>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                )}
+                            </li>
+                        ))}
+                    </ul>
+                </nav>
+            </div>
             <div>
-                <ul class="login_links">
+                <ul className="login_links">
                     <li><a href="#">Login</a></li>
                     <li className="divider">|</li>
                     <li><a href="#">Register</a></li>
@@ -67,5 +37,62 @@ function Header() {
         </header>
     );
 }
+
+const navItems = [
+    {
+        label: "New Arrivals",
+        link: "#",
+        submenu: [
+            { label: "Men's Clothing", link: "#" },
+            { label: "Women's Clothing", link: "#" },
+            { label: "Children's Clothing", link: "#" },
+            { label: "Home Products", link: "#" },
+        ],
+    },
+    {
+        label: "Men's Clothing",
+        link: "#",
+        submenu: [
+            { label: "T-Shirts", link: "#" },
+            { label: "Sweatshirts", link: "#" },
+            { label: "Shirts", link: "#" },
+            { label: "Suits", link: "#" },
+            { label: "Men's Sale", link: "#" },
+        ],
+    },
+    {
+        label: "Women's Clothing",
+        link: "#",
+        submenu: [
+            { label: "T-Shirts", link: "#" },
+            { label: "Demin", link: "#" },
+            { label: "Shorts", link: "#" },
+            { label: "Dresses", link: "#" },
+            { label: "Women's Sale", link: "#" },
+        ],
+    },
+    {
+        label: "Children's Clothing",
+        link: "#",
+        submenu: [
+            { label: "T-Shirts", link: "#" },
+            { label: "Shoes", link: "#" },
+            { label: "Shirts", link: "#" },
+            { label: "Hoodies", link: "#" },
+            { label: "Children's Sale", link: "#" },
+        ],
+    },
+    {
+        label: "Home Products",
+        link: "#",
+        submenu: [
+            { label: "Electricals", link: "#" },
+            { label: "Kitchenware", link: "#" },
+            { label: "Furniture", link: "#" },
+            { label: "Bathroom", link: "#" },
+            { label: "Home Sale", link: "#" },
+        ],
+    },
+];
 
 export default Header;

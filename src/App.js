@@ -1,3 +1,4 @@
+// App.js
 import React from 'react';
 import LoadingScreen from './LoadingScreen'; // Import the LoadingScreen component
 import Header from './Header';
@@ -25,10 +26,10 @@ const products = [
 function App() {
     return (
         <div className="App">
-            {/* Render the LoadingScreen component */}
             <LoadingScreen />
+            <Header>
             <Logo />
-            <Header />
+            </Header>
             <BannerSlider />
             <h1>Store Front</h1>
             <Storefront products={products} />

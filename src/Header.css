@@ -1,4 +1,6 @@
-*{
+/*Header.css*/
+
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -16,28 +18,34 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 30px 10%;
+    padding: 0px 10%;
 }
 
-nav{
+.header-container {
+    display: flex;
+    align-items: center;
+}
+
+nav {
     border-bottom: 2px solid #F9A819;
 }
 
-.nav_links{
+.nav_links {
     list-style: none;
+    display: flex;
 }
 
-.nav_links li{
-    display: inline-block;
-    padding: 10px 50px;
+.nav_links li {
+    padding: 10px 20px;
+    position: relative;
 }
 
-.nav_links li a{
+.nav_links li a {
     transition: all 0.3s ease 0s;
     color: #F9A819;
 }
 
-.nav_links li a:hover{
+.nav_links li a:hover {
     color: #F93801;
     text-decoration: underline;
     text-decoration-color: #242521;
