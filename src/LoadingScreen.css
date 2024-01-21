@@ -1,0 +1,98 @@
+/* LoadingScreen.css */
+
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Ensure it's on top of the rest of the content */
+}
+
+.container {
+    font-size: 10px;
+    width: 15em;
+    height: 15em;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    transform: rotate(-135deg);
+    animation: animate-rotate 6s infinite;
+}
+
+@keyframes animate-rotate {
+    0%, 23% {
+        transform: rotate(calc(-135deg + 90deg * 0));
+    }
+    25%, 47% {
+        transform: rotate(calc(-135deg + 90deg * 1));
+    }
+    50%, 73% {
+        transform: rotate(calc(-135deg + 90deg * 2));
+    }
+    75%, 97% {
+        transform: rotate(calc(-135deg + 90deg * 3));
+    }
+    100% {
+        transform: rotate(calc(-135deg + 90deg * 4));
+    }
+}
+
+.container span {
+    position: relative;
+}
+
+.container span::before,
+.container span::after {
+    content: '';
+    position: absolute;
+    box-sizing: border-box;
+    border-style: none solid solid none;
+    animation: 1.6s linear infinite;
+    animation-name: animate-border-width, animate-border-color, animate-scale;
+}
+
+.container span::after {
+    animation-delay: -1s;
+}
+
+@keyframes animate-border-width {
+    0%, 100% {
+        border-width: 0.1em;
+    }
+    25% {
+        border-width: 1.5em;
+    }
+}
+
+@keyframes animate-border-color {
+    0%, 12.5% {
+        border-color: #242521;
+    }
+    25%, 37.5% {
+        border-color: #b75006;
+    }
+    50%, 62.5% {
+        border-color: #eb8d07;
+    }
+    75%, 82.5%{
+        border-color: #611806
+    }
+    100%{
+        border-color: #20100a
+    }
+}
+
+@keyframes animate-scale {
+    from {
+        width: 1%;
+        height: 1%;
+    }
+    to {
+        width: 100%;
+        height: 100%;
+    }
+}

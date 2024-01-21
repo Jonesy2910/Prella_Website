@@ -1,0 +1,23 @@
+.image-slider {
+    display: flex;
+    width: 100%;
+    max-width: 1600px; /* Adjust the width as needed */
+}
+
+.image-slider-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 55vh; /* Set height to the viewport height to center vertically */
+    /* Additional styles for your image slider */
+}
+
+.image-slider img {
+    width: 100%;
+    height: 600px;
+    display: none;
+}
+
+.image-slider img.active {
+    display: block;
+}

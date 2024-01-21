@@ -1,0 +1,14 @@
+.banner {
+    display: flex;
+    overflow: hidden;
+}
+
+.banner img {
+    width: 100%;
+    height: auto;
+    display: none;
+}
+
+.active {
+    display: block;
+}

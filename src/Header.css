@@ -1,0 +1,131 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+li, a {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #edf0f1;
+    text-decoration: none;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10%;
+}
+
+nav{
+    border-bottom: 2px solid #F9A819;
+}
+
+.nav_links{
+    list-style: none;
+}
+
+.nav_links li{
+    display: inline-block;
+    padding: 10px 50px;
+}
+
+.nav_links li a{
+    transition: all 0.3s ease 0s;
+    color: #F9A819;
+}
+
+.nav_links li a:hover{
+    color: #F93801;
+    text-decoration: underline;
+    text-decoration-color: #242521;
+}
+
+/* Style for the dropdown arrows */
+/* Style for the dropdown arrows (hidden by default) */
+.nav_links .dropdown::after {
+    content: "";
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent; /* Left arrow tip */
+    border-right: 5px solid transparent; /* Right arrow tip */
+    border-top: 5px solid #F9A819; /* Color of the arrow */
+    position: absolute;
+    top: 100%;
+    left: 50%; /* Center the arrow horizontally */
+    transform: translateX(-50%) rotate(180deg);
+    opacity: 0; /* Initially, make the arrow invisible */
+    transition: transform 0.3s, opacity 0.3s; /* Add a smooth transition for rotation and visibility */
+}
+
+/* Show the arrow and rotate it to point downwards when the dropdown is hovered */
+.nav_links .dropdown:hover::after {
+    transform: translateX(-50%) rotate(0deg);
+    opacity: 1; /* Make the arrow visible when hovered */
+}
+
+.login_links{
+    list-style: none;
+}
+
+.login_links li{
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+.login_links li a{
+    transition: all 0.3s ease 0s;
+    color: #F9A819;
+}
+
+.login_links li a:hover{
+    color: #F93801;
+    text-decoration: underline;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none; /* Initially hide the dropdown menu */
+    position: absolute;
+    background-color: #fff;
+    top: 100%; /* Display the dropdown below the parent item */
+    width: 100%;   /* Align the dropdown with the left edge of the parent item */
+}
+
+/* Display the dropdown menu when hovering over .dropdown */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu{
+    border-bottom: 2px solid #F9A819;
+    border-left: 2px solid #F9A819;
+    border-right: 2px solid #F9A819;
+    padding-left: 5px;
+}
+
+/* Style for the dropdown menu items */
+.dropdown-menu li {
+    display: block;
+    padding: 10px 0px;
+}
+
+.dropdown-menu a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Hover effect for dropdown menu items */
+.dropdown-menu li:hover {
+    background-color: #fff;
+}
+
+.divider{
+    color: #242521;
+}
